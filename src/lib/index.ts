@@ -1,4 +1,5 @@
 import { User } from "@/types/user";
+import { cookies } from "next/headers";
 import { SignJWT, jwtVerify } from "jose";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -20,6 +21,13 @@ export async function decrypt(input: string): Promise<any> {
     algorithms: ["HS256"],
   });
   return payload;
+}
+
+export async function getUser() {
+  const session = cookies().get("session")?.value;
+  if (!session) return null;
+  const user = await decrypt(session);
+  return user;
 }
 
 export async function getSession(request: NextRequest) {

@@ -29,7 +29,7 @@ export async function loginAction(formData: FormData) {
 
 }
 
-export async function logout() {
+export async function logoutAction() {
   // Destroy the session
   cookies().set("session", "", { expires: new Date(0) });
   redirect("/")

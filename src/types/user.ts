@@ -3,8 +3,8 @@ export type User = {
   email: string;
   password: string;
   name: {
-    first: string;
-    last: string;
+    firstname: string;
+    lastname: string;
   };
   phone: string;
 }

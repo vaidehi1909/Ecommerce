@@ -1,18 +1,25 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Product } from "@/types/product";
-import AppBar from "./AppBar";
+import { useAppDispatch } from "@/hooks/redux";
+import { setProductList } from "@/reducers/productSlice";
+import ProductCardList from "./ProductCardList";
 
 const Dashboard = (props: { products: Product[] }) => {
   const { products } = props;
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    const dispatchActions = async () => {
+      await dispatch(setProductList(products))
+    }
+    dispatchActions()
+  }, [])
 
 
   return (
-    <>
-      <AppBar />
-      Dashboard page {products.length}
-    </>
+    <ProductCardList />
   );
 };
 

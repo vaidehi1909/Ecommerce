@@ -10,3 +10,7 @@ export type Product = {
     count: number;
   };
 }
+
+export interface CartProduct extends Product {
+  quantity: number;
+}
