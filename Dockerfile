@@ -6,14 +6,14 @@ ENV NODE_ENV $NODE_ENV
 RUN npm install
 
 
-FROM node:18-alpine AS builder
+FROM deps AS builder
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN npm run build
 
 
-FROM node:18-alpine AS runner
+FROM builder AS runner
 WORKDIR /app
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
