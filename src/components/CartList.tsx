@@ -37,7 +37,7 @@ const CartList = () => {
     <>
       {cartList.map((item: CartProduct, index: number) => {
         return (
-          <Grid key={item.id} container direction="row" justifyContent="center" alignItems="center" spacing={2} sx={{ mt: 1, ml: 2 }}>
+          <Grid key={item.id} container direction="row" justifyContent="center" alignItems="center" spacing={3} sx={{ mt: 1 }}>
             <Grid item alignContent={"center"} justifyContent={"center"}>
               <Card sx={{ maxWidth: 345 }}>
                 <CardActionArea>
@@ -52,8 +52,12 @@ const CartList = () => {
             </Grid>
             <Grid item xs={12} md={6}>
               <Grid container direction="row" justifyContent="space-between" alignItems="center">
+                <Grid item xs={9} >
                 <Typography variant="h5">{item.title}</Typography>
-                <Typography variant="h6">₹{item.price}</Typography>
+                </Grid>
+                <Grid item xs={3} justifyContent={"flex-end"} alignItems="center">
+                  <Typography variant="h6" display={"flex"} justifyContent={"flex-end"} justifyItems={"flex-end"}>₹{item.price}</Typography>
+                </Grid>
               </Grid>
               <Grid container direction="row" justifyContent="flex-start" alignItems="center">
                 <Typography variant="body1">Qty:  {item.quantity}</Typography>

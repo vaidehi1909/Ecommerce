@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import Dashboard from "@/components/Dashboard";
 import axios from "axios";
 
@@ -16,9 +16,7 @@ const fetchProducts = async () => {
 const DashboardPage = async () => {
   const products = await fetchProducts();
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Dashboard products={products} />
-    </Suspense>
+    <Dashboard products={products} />
   );
 };
 

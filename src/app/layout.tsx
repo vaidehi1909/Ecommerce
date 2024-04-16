@@ -1,13 +1,10 @@
+import * as React from 'react';
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import ReduxProvider from "@/components/ReduxProvider";
-import { ThemeProvider } from "@mui/material";
-import CssBaseline from '@mui/material/CssBaseline';
+import { ThemeProvider } from "@mui/material/styles";
+import { CssBaseline } from '@mui/material';
 import theme from "@/styles/theme";
-
-// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "E-commerce App",
