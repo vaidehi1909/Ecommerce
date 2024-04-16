@@ -16,4 +16,7 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Demo Site
+https://cool-ecommerce.netlify.app
+
 If you want to login into Dashboard, then you can use this [user's credential](https://fakestoreapi.com/users)
