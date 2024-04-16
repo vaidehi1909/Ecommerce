@@ -1,18 +1,10 @@
-"use client";
+// "use client";
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
+import { AppBar, Toolbar, Container, Box, Typography } from '@mui/material';
 
-import Setting from './Setting';
-import ProductCategory from './ProductCategory';
 import Link from 'next/link';
-import { User } from '@/types/user';
-import Cart from './Cart';
 
-const ResponsiveAppBar = ({ user, showCategory = true }: { user: User, showCategory?: boolean }) => {
+const ResponsiveAppBar = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <AppBar position="static">
@@ -22,9 +14,7 @@ const ResponsiveAppBar = ({ user, showCategory = true }: { user: User, showCateg
             <Link href="/dashboard" style={{ textDecoration: 'none', color: 'white' }} aria-label="logo">LOGO</Link>
           </Typography>
           <Box sx={{ flexGrow: 0 }}>
-            {showCategory && <ProductCategory />}
-            <Cart />
-            <Setting user={user} />
+            {children}
           </Box>
         </Toolbar>
       </Container>

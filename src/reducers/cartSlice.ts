@@ -18,7 +18,16 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, { payload }: PayloadAction<CartProduct>) => {
-      state.list.push(payload);
+      let existingItem = false
+      const items = state.list.map((item) => {
+        if (item.id === payload.id) {
+          item.quantity += 1;
+          existingItem = true;
+        }
+        return item;
+      });
+      if (existingItem) state.list = items
+      else state.list.push(payload);
     },
     clearCart: (state) => {
       state.list = [];

@@ -1,15 +1,9 @@
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
-import CardActionArea from '@mui/material/CardActionArea';
-import CardActions from '@mui/material/CardActions';
+"use client"
+import { Card, CardContent, CardMedia, Typography, Grid, CardActionArea, CardActions, Rating } from '@mui/material';
 import Link from 'next/link'
 
 import { useProductList } from '@/hooks/useProductList';
 import { Product } from '@/types/product';
-import { Rating } from '@mui/material';
 
 const ProductCardList = () => {
   const { products } = useProductList();

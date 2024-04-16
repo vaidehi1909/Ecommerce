@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import axios from "axios";
 import { getUser } from "@/lib";
 import ProductDetails from "@/components/ProductDetails";
@@ -18,9 +18,7 @@ const DashboardPage = async ({ params }: { params: { id: string } }) => {
   const user = await getUser();
   const product = await fetchProduct(params.id);
   return (
-    <Suspense fallback={<div>Loading Product...</div>}>
-      <ProductDetails product={product} user={user} />
-    </Suspense>
+    <ProductDetails product={product} user={user} />
   );
 };
 

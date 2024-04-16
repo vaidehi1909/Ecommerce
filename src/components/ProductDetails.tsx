@@ -1,12 +1,5 @@
 "use client";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
-import Rating from "@mui/material/Rating";
-import CardActionArea from '@mui/material/CardActionArea';
-import CardActions from '@mui/material/CardActions';
-import CardMedia from '@mui/material/CardMedia';
-import Card from '@mui/material/Card';
-
+import { Grid, Typography, Rating, CardActionArea, CardActions, CardMedia, Card } from "@mui/material";
 
 import { Product } from "@/types/product"
 import { User } from "@/types/user"

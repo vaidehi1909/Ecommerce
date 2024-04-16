@@ -12,7 +12,8 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import useServerAction from '@/hooks/useServerAction';
 import { loginAction } from '@/actions';
-import { Alert, Snackbar } from '@mui/material';
+import Alert from '@mui/material/Alert';
+import Snackbar from '@mui/material/Snackbar';
 
 function Copyright(props: any) {
   return (
