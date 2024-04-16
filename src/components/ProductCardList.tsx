@@ -3,7 +3,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
 import CardActionArea from '@mui/material/CardActionArea';
 import CardActions from '@mui/material/CardActions';
 import Link from 'next/link'
@@ -12,7 +11,7 @@ import { useProductList } from '@/hooks/useProductList';
 import { Product } from '@/types/product';
 import { Rating } from '@mui/material';
 
-export default function ProductCardList() {
+const ProductCardList = () => {
   const { products } = useProductList();
   return (
     <Grid container spacing={2} sx={{ mt: 1 }}>
@@ -49,3 +48,5 @@ export default function ProductCardList() {
     </Grid>
   );
 }
+
+export default ProductCardList

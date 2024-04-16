@@ -1,3 +1,4 @@
+"use client";
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -11,7 +12,7 @@ import Link from 'next/link';
 import { User } from '@/types/user';
 import Cart from './Cart';
 
-function ResponsiveAppBar({ user, showCategory = true }: { user: User, showCategory?: boolean }) {
+const ResponsiveAppBar = ({ user, showCategory = true }: { user: User, showCategory?: boolean }) => {
 
   return (
     <AppBar position="static">
